@@ -5,6 +5,21 @@
 from __future__ import division      #division module makes it so the division operator doesn't round the quotient
 import cmath                               
                                      #cmath module allows for complex solutions
+                                     
+def testing(x, x2):
+  
+  if x == x2 and x.imag == 0:
+	print "Your solution is: x=", x.real             #Double, real root
+
+  elif x.imag == 0 and x2.imag == 0:                      #Distinct real roots
+	print "Your solutions are: x=", x.real, "and x=", x2.real
+  
+  elif x == x2:
+	print "Your solution is: x = ", x   #Double, complex root
+    
+  else:
+	print "Your solutions are: x =", x, "and x =", x2 
+
 
 print "Your equation must be in standard form"
 
@@ -16,46 +31,36 @@ print
 
 try:
 
-    a, b, c= input("Please enter the coefficents with the format a,b,c: ")
+  a, b, c= input("Please enter the coefficents with the format a,b,c: ")
 
 except TypeError:
-    
-    pass
-
-try:
-
-    x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
-
-    x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
-
-except NameError:
-    
-    b= 0                  
-    
-    c= 0
-    
-    x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)  #Says "a" is not defined here, fix so only "a" can be used for input
-    
-    x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)
-
-if x == x2 and (-b + cmath.sqrt((b**2)-4*a*c))%(2*a) == 0:    
-    
-    print "Your solution is: x =", int(x)                           #Double, integer root
-    
-elif (-b + cmath.sqrt((b**2)-4*a*c))%(2*a) == 0 and (-b - cmath.sqrt((b**2)-4*a*c))%(2*a) == 0: 
- 
-    print "Your solutions are: x =", int(x), "and x =", int(x2)       #Distinct integer roots 
-
-elif (-b + cmath.sqrt((b**2)-4*a*c))%(2*a) == 0:
-    
-    print "Your solution is: x =", int(x)
-            
-elif (-b - cmath.sqrt((b**2)-4*a*c))%(2*a) == 0:      #lines 49-55, one root is an integer, the second root is not
-    
-    print "Your solution is: x =", int(x2)
-    
-elif x == x2:
-    print "Your solution is: x = ", x                    #Double, non-integer root
-    
+  
+  b= 0
+  
+  c= 0
+  
+  x = cmath.sqrt(a)
+  
+  testing(x, x2)
+  
 else:
-    print "Your solutions are: x =", x, "and x =", x2    #Distinct, non-integer roots
+
+  x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
+
+  x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
+
+  if x == x2 and x.imag == 0:
+	print "Your solution is: x=", x.real             #Double, real root
+
+  elif x.imag == 0 and x2.imag == 0:                      #Distinct real roots
+	print "Your solutions are: x=", x.real, "and x=", x2.real
+  
+  elif x == x2:
+	print "Your solution is: x = ", x   #Double, complex root
+    
+  else:
+	print "Your solutions are: x =", x, "and x =", x2    #Distinct, complex root
+
+#Fix so that input of the form a,0,0 gives correct solution, says solution is 0 now
+
+#Fix so input 0,0,0 doesn't error
