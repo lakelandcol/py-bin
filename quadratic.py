@@ -29,16 +29,21 @@ print "Note that j = i = (-1)^1/2"
 
 print
 
+a=0
+b=0
+c=0
+
 try:
 
   a, b, c= input("Please enter the coefficents with the format a,b,c: ")
-
+   
 except TypeError:
   
-  b= 0
+  #b= 0
   
-  c= 0
+  #c= 0
   
+  print "foor", a
   x = cmath.sqrt(a)
   
   testing(x, x2)
