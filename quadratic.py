@@ -29,24 +29,34 @@ print "Note that j = i = (-1)^1/2"
 
 print
 
-a=0
-b=0
-c=0
+#WARNING *PSUEDOCODE*
+"""
+inputList = they entered stuff here
+a = None
+b = None
+c = None
+ 
+if len(inputList) > 3:
+        error and ask them to try again
+else
+        if len(inputList) == 1:
+                a = inputList[0]
+                b = 0
+                c = 0
+        elif len(inputList) == 2:
+                a = inputList[0]
+                b = inputList[1]
+                c = 0
+        else
+                a = inputList[0]
+                b = inputList[1]
+                c = inputList[2]
+"""
+#End of pseudocode
 
-try:
-
-  a, b, c= input("Please enter the coefficents with the format a,b,c: ")
-   
-except TypeError:
+x = cmath.sqrt(a)
   
-  #b= 0
-  
-  #c= 0
-  
-  print "foor", a
-  x = cmath.sqrt(a)
-  
-  testing(x, x2)
+testing(x, x2)
   
 else:
 
