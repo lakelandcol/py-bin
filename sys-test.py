@@ -9,6 +9,5 @@ list = [a, b, c]
 for name in list:
   print name
   if name == b:
-	sys.exit()
-  else:
-	pass
+	sys.exit(0)
+

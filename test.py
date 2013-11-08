@@ -11,15 +11,15 @@ def main(argv):
    for opt, arg in opts:
       if opt == '-h':
          print 'test.py -i <inputfile> -o <outputfile>'
+         print opts, #args
          sys.exit()
       elif opt in ("-i", "--ifile"):
          inputfile = arg
       elif opt in ("-o", "--ofile"):
          outputfile = arg
-   print 'Input file is "', inputfile
-   print 'Output file is "', outputfile
-   print arg
+   #print 'Input file is "', inputfile
+   #print 'Output file is "', outputfile
    print args
-   
+   print opts
 if __name__ == "__main__":
    main(sys.argv[1:])
