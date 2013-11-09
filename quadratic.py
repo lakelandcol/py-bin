@@ -7,7 +7,6 @@ import cmath
                                      #cmath module allows for complex solutions
                                      
 def testing(x, x2):
-  
   if x == x2 and x.imag == 0:
 	print "Your solution is: x=", x.real             #Double, real root
 
@@ -30,7 +29,7 @@ print "Note that j = i = (-1)^1/2"
 print
 
 #WARNING *PSUEDOCODE*
-"""
+"""                                          #This is where user input occurs
 inputList = they entered stuff here
 a = None
 b = None
@@ -59,7 +58,8 @@ x = cmath.sqrt(a)
 testing(x, x2)
   
 else:
-
+	testing(x, x2)
+"""
   x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
 
   x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
@@ -75,7 +75,9 @@ else:
     
   else:
 	print "Your solutions are: x =", x, "and x =", x2    #Distinct, complex root
+"""
 
-#Fix so that input of the form a,0,0 gives correct solution, says solution is 0 now
 
-#Fix so input 0,0,0 doesn't error
+          #Fix so that input of the form a,0,0 gives correct solution, says solution is 0 now
+
+          #Fix so input 0,0,0 doesn't error

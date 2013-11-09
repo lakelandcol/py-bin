@@ -7,7 +7,6 @@
 # Searches current directory for a given file
 
 echo "What is the filename?"
-echo
 read filename
 if [ ! $filename  ]
 
@@ -16,26 +15,18 @@ if [ ! $filename  ]
 then
     
     echo "Give me a filename!"
-    echo
     exit
 else
     find $filename > /dev/null
-    if [ $? = 0 ]
+    if [ $? = 0 ] then
+		echo "The file '$filename' exists and here is what it looks like:"
+		sleep 3s  
+		echo
+		more $filename
     
-    then
-	
-	echo
-	echo "The file '$filename' exists and here is what it looks like:"
-	
-	sleep 3s  
-	echo
-	more $filename
-    else
-    
-	echo
-	echo 'The given file does not exist in the present working directory.'    
-	
-	echo
+	else                 #Fix Error here: syntax error
+		echo
+		echo 'The given file does not exist in the present working directory.'    
     
     fi
 fi
