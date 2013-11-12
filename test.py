@@ -18,8 +18,9 @@ def main(argv):
          outputfile = arg
    print 'Input file is "', inputfile
    print 'Output file is "', outputfile
-   print arg
+   print argv
    print args
+   print opts
    
 if __name__ == "__main__":
    main(sys.argv[1:])
