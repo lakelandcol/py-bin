@@ -6,47 +6,30 @@
 
 # Searches current directory for a given file
 
-echo "What is the filename?"
-
+echo "What is the filename?"     #Should replace this with getopts
 echo
-
 read filename
-
 if [ ! $filename  ]
 
-# Used ! argument for the Bash builtin "test" (see man page for builtins, under "test" section) 
+#Used ! argument for the Bash builtin "test" (see man page for builtins, under "test" section) 
 
-then
-    
+then    
     echo "Give me a filename!"
-    
-    echo
-
     exit
-
+    
 else
-    
     find $filename > /dev/null
-    
-    if [ $? = 0 ]
+    if [ $? = 0 ] 
     
     then
-	
-	echo
-
-	echo "The file '$filename' exists and here is what it looks like:"
+		echo "The file '$filename' exists and here is what it looks like:"
+		echo
+		sleep 3s  
+		echo
+		more $filename
+	else
+		echo
+		echo 'The given file does not exist in the present working directory.'    
     
-	sleep 3s
-    
-	echo
-    
-	more $filename
-    
-    else
-	echo
-    
-	echo 'The given file does not exist in the present working directory.'
-    
-	echo
-    fi
+	fi
 fi

@@ -3,11 +3,10 @@
 # Program to solve a quadratic in standard form
 
 from __future__ import division      #division module makes it so the division operator doesn't round the quotient
-import cmath                               
-                                     #cmath module allows for complex solutions
-                                     
+import cmath
+import sys, getopt                               
+                                     #cmath module allows for complex solutions                                     
 def testing(x, x2):
-  
   if x == x2 and x.imag == 0:
 	print "Your solution is: x=", x.real             #Double, real root
 
@@ -18,7 +17,7 @@ def testing(x, x2):
 	print "Your solution is: x = ", x   #Double, complex root
     
   else:
-	print "Your solutions are: x =", x, "and x =", x2 
+	print "Your solutions are: x =", x, "and x =", x2   #Distinct, complex root
 
 
 print "Your equation must be in standard form"
@@ -29,6 +28,21 @@ print "Note that j = i = (-1)^1/2"
 
 print
 
+args = getopt.getopt(argv)             #This is where user input occurs
+a = None                               #Says argv isn't defined, look at test.py, define a function
+b = None
+c = None
+
+if len(args) > 3:
+	print "Error: Your equation must be in standard form."
+elif len(args) == 3:
+	a = args[0]
+	b = args[1]
+	c = args[2]
+	testing(x, x2)
+elif len(args) == 1:
+	a = args[0]
+	testing(x, x2)
 #WARNING *PSUEDOCODE*
 """
 inputList = they entered stuff here
@@ -54,12 +68,13 @@ else
 """
 #End of pseudocode
 
-x = cmath.sqrt(a)
+#x = cmath.sqrt(a)              #Funny lines
   
-testing(x, x2)
+#testing(x, x2)
   
-else:
-
+#else:
+	#testing(x, x2)
+"""
   x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
 
   x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
@@ -75,7 +90,9 @@ else:
     
   else:
 	print "Your solutions are: x =", x, "and x =", x2    #Distinct, complex root
+"""
 
-#Fix so that input of the form a,0,0 gives correct solution, says solution is 0 now
 
-#Fix so input 0,0,0 doesn't error
+          #Fix so that input of the form a,0,0 gives correct solution, says solution is 0 now
+
+          #Fix so input 0,0,0 doesn't error
