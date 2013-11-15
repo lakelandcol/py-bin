@@ -3,22 +3,56 @@
 # Program to solve a quadratic in standard form
 
 from __future__ import division      #division module makes it so the division operator doesn't round the quotient
-import cmath
-import sys, getopt                               
-                                     #cmath module allows for complex solutions                                     
+import cmath                         #cmath module allows for complex solutions
+import sys, getopt
+
+a = None
+b = None
+c = None
+#class here
+def main(argv):
+
+  args = argv                            #This is where user input occurs
+  print args
+  a = None
+  b = None
+  c = None
+
+  if len(args) > 3:
+	print "Error: Your equation must be in standard form."
+  elif len(args) == 3:
+	a = args[0]
+	b = args[1]
+	c = args[2]
+  elif len(args) == 1:
+	a = args[0]
+	b = 0
+	c = 0
+
+if __name__ == "__main__":
+   main(sys.argv[1:])
+
+#Says b isn't defined
+x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
+
+x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
+
+
+
 def testing(x, x2):
   if x == x2 and x.imag == 0:
-	print "Your solution is: x=", x.real             #Double, real root
+	print "Your solution is: x=", x.real                    #Double, real root
 
-  elif x.imag == 0 and x2.imag == 0:                      #Distinct real roots
+  elif x.imag == 0 and x2.imag == 0:                        #Distinct real roots
 	print "Your solutions are: x=", x.real, "and x=", x2.real
   
   elif x == x2:
-	print "Your solution is: x = ", x   #Double, complex root
+	print "Your solution is: x = ", x                       #Double, complex root
     
   else:
-	print "Your solutions are: x =", x, "and x =", x2   #Distinct, complex root
+	print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
 
+testing(x, x2)
 
 print "Your equation must be in standard form"
 
@@ -28,21 +62,6 @@ print "Note that j = i = (-1)^1/2"
 
 print
 
-args = getopt.getopt(argv)             #This is where user input occurs
-a = None                               #Says argv isn't defined, look at test.py, define a function
-b = None
-c = None
-
-if len(args) > 3:
-	print "Error: Your equation must be in standard form."
-elif len(args) == 3:
-	a = args[0]
-	b = args[1]
-	c = args[2]
-	testing(x, x2)
-elif len(args) == 1:
-	a = args[0]
-	testing(x, x2)
 #WARNING *PSUEDOCODE*
 """
 inputList = they entered stuff here
@@ -75,9 +94,6 @@ else
 #else:
 	#testing(x, x2)
 """
-  x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
-
-  x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
 
   if x == x2 and x.imag == 0:
 	print "Your solution is: x=", x.real             #Double, real root
