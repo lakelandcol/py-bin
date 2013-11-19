@@ -3,9 +3,9 @@ class Test:
 	self.x = 4
 	self.y = 3
   def print_value(self):
-	#self.m = 9
-	print self.x
+	self.m = 9
+	print self.x, self.m, self.y
 
 testObject = Test()
 testObject.set_value()
-testObject.print_value()
+testObject.print_value
