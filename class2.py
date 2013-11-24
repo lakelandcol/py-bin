@@ -1,12 +1,9 @@
 class MyClass:
-  
-  def __init__(self):
-    self.i = "foo"
+  def __init__(self, x):
+	self.i = "You just printed out a variable!"
+	print self.i
+	print x
+	print "You just defined a variable and printed it out! Good job!"
+  #def printOut(self):
 
-  def printOut(self):
-    print self.i
-
-obj = MyClass()
-
-print obj.i
-obj.printOut()
+obj = MyClass("my variable")
