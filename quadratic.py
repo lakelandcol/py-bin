@@ -9,50 +9,54 @@ import sys, getopt
 a = None
 b = None
 c = None
+
+
 #class here
-def main(argv):
 
-  args = argv                            #This is where user input occurs
-  print args
-  a = None
-  b = None
-  c = None
-
-  if len(args) > 3:
-	print "Error: Your equation must be in standard form."
-  elif len(args) == 3:
-	a = args[0]
-	b = args[1]
-	c = args[2]
-  elif len(args) == 1:
-	a = args[0]
-	b = 0
-	c = 0
-
-if __name__ == "__main__":
-   main(sys.argv[1:])
-
-#Says b isn't defined
-x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
-
-x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
-
-
-
-def testing(x, x2):
-  if x == x2 and x.imag == 0:
-	print "Your solution is: x=", x.real                    #Double, real root
-
-  elif x.imag == 0 and x2.imag == 0:                        #Distinct real roots
-	print "Your solutions are: x=", x.real, "and x=", x2.real
+class Quadratic():
   
-  elif x == x2:
-	print "Your solution is: x = ", x                       #Double, complex root
-    
-  else:
-	print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
+  def __init__(argv, self):
+	self.args = argv                            #This is where user input occurs
+	print args
+	a = None
+	b = None
+	c = None
 
-testing(x, x2)
+  def length(self):
+	if len(self.args) > 3:
+	  print "Error: Your equation must be in standard form."
+	elif len(self.args) == 3:
+	  a = self.args[0]
+	  b = self.args[1]
+	  c = self.args[2]
+	elif len(self.args) == 1:
+	  a = self.args[0]
+	  b = 0
+	  c = 0
+
+
+  x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
+
+  x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
+
+
+
+  def testing(x, x2):
+	if x == x2 and x.imag == 0:
+	  print "Your solution is: x=", x.real                    #Double, real root
+
+	elif x.imag == 0 and x2.imag == 0:                        #Distinct real roots
+	  print "Your solutions are: x=", x.real, "and x=", x2.real
+  
+	elif x == x2:
+	  print "Your solution is: x = ", x                       #Double, complex root
+    
+	else:
+	  print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
+
+solverObject = Quadratic()
+
+solverObject.testing(x, x2)
 
 print "Your equation must be in standard form"
 
@@ -87,6 +91,9 @@ else
 """
 #End of pseudocode
 
+
+#WARNING *Unused code*
+
 #x = cmath.sqrt(a)              #Funny lines
   
 #testing(x, x2)
@@ -112,3 +119,11 @@ else
           #Fix so that input of the form a,0,0 gives correct solution, says solution is 0 now
 
           #Fix so input 0,0,0 doesn't error
+
+
+
+
+#if __name__ == "__main__":
+   #main(sys.argv[1:])
+
+#Says b isn't defined
