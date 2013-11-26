@@ -17,3 +17,6 @@ print testObject.x
 testObject.print_value(1)
 testObject.set_value(20, 1)
 print testObject.x, testObject.z, testObject.a, testObject.b
+
+#ASSIGNMENTS:
+#    = *new name* = *old name*

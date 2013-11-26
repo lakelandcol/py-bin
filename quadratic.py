@@ -11,26 +11,28 @@ import sys, getopt
 class Quadratic():
   
   def __init__(self, argv):
-	self.args = argv                            #This is where user input occurs
-	print args
 	a = None
 	b = None
 	c = None
-	x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
+	self.coeffs = argv                       #This is where user input occurs
+	print self.coeffs
+	self.coeffs = getopt.getopt(argv)
+	for arg in args:
+  #def length(self):
+	  if len(self.coeffs) > 3:
+		print "Error: Your equation must be in standard form."
+	  elif len(self.coeffs) == 3:
+		a = self.coeffs[0]
+		b = self.coeffs[1]
+		c = self.coeffs[2]
+	  elif len(self.coeffs) == 1:
+		a = self.coeffs[0]
+		b = 0
+		c = 0
+	  
+		x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
 
-	x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
-
-  def length(self):
-	if len(self.args) > 3:
-	  print "Error: Your equation must be in standard form."
-	elif len(self.args) == 3:
-	  a = self.args[0]
-	  b = self.args[1]
-	  c = self.args[2]
-	elif len(self.args) == 1:
-	  a = self.args[0]
-	  b = 0
-	  c = 0
+		x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
 
 
   def testing(x, x2):
