@@ -6,21 +6,19 @@ from __future__ import division      #division module makes it so the division o
 import cmath                         #cmath module allows for complex solutions
 import sys, getopt
 
-a = None
-b = None
-c = None
-
-
 #class here
 
 class Quadratic():
   
-  def __init__(argv, self):
+  def __init__(self, argv):
 	self.args = argv                            #This is where user input occurs
 	print args
 	a = None
 	b = None
 	c = None
+	x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
+
+	x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
 
   def length(self):
 	if len(self.args) > 3:
@@ -33,12 +31,6 @@ class Quadratic():
 	  a = self.args[0]
 	  b = 0
 	  c = 0
-
-
-  x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
-
-  x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
-
 
 
   def testing(x, x2):
@@ -54,7 +46,7 @@ class Quadratic():
 	else:
 	  print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
 
-solverObject = Quadratic()
+solverObject = Quadratic(sys.argv[1:])
 
 solverObject.testing(x, x2)
 

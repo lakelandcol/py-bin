@@ -22,10 +22,10 @@ def main(argv):
    print args
    print opts
    print 'Input file is "', inputfile
-   print 'Output file is "', outputfile
+   #print 'Output file is "', outputfile
    print argv
-   print args
-   print opts
+   #print args
+   #print opts
    
 
 if __name__ == "__main__":
