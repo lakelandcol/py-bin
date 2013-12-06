@@ -4,7 +4,7 @@
 
 from __future__ import division      #division module makes it so the division operator doesn't round the quotient
 import cmath                         #cmath module allows for complex solutions
-import sys, getopt
+import sys
 
 #class here
 
@@ -14,19 +14,19 @@ class Quadratic():
 	a = None
 	b = None
 	c = None
-	self.coeffs = argv                       #This is where user input occurs
+	self.coeffs = sys.argv          #This is where user input occurs
 	print self.coeffs
-	self.coeffs = getopt.getopt(argv)
-	for arg in args:
+	print len(self.coeffs)
+	for self.coeffs in argv:
   #def length(self):
 	  if len(self.coeffs) > 3:
 		print "Error: Your equation must be in standard form."
 	  elif len(self.coeffs) == 3:
-		a = self.coeffs[0]
-		b = self.coeffs[1]
-		c = self.coeffs[2]
+		a = self.coeffs[1]
+		b = self.coeffs[2]
+		c = self.coeffs[3]
 	  elif len(self.coeffs) == 1:
-		a = self.coeffs[0]
+		a = self.coeffs[1]
 		b = 0
 		c = 0
 	  
@@ -48,7 +48,7 @@ class Quadratic():
 	else:
 	  print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
 
-solverObject = Quadratic(sys.argv[1:])
+solverObject = Quadratic(sys.argv[2:])
 
 solverObject.testing(x, x2)
 
