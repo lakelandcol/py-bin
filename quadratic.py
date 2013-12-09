@@ -14,6 +14,7 @@ class Quadratic():
 		self.a = None
 		self.b = None
 		self.c = None
+		
 		#user input
 		
 		self.coeffs = sys.argv
@@ -22,9 +23,9 @@ class Quadratic():
 		if len(self.coeffs) > 4:
 			print "Error: Your equation must be in standard form."
 		elif len(self.coeffs) == 4:
-			self.a = self.coeffs[1]
-			self.b = self.coeffs[2]
-			self.c = self.coeffs[3]
+			self.a = self.coeffs[2]
+			self.b = self.coeffs[3]
+			self.c = self.coeffs[4]
 		elif len(self.coeffs) == 2:
 			self.a = self.coeffs[1]
 			self.b = 0
@@ -33,10 +34,12 @@ class Quadratic():
 		b = self.b
 		c = self.c
 		print a, b, c
-	def set_roots(self):
+		print self.coeffs[2], self.coeffs[3], self.coeffs[4]
 		self.x = (-1*b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
 
 		self.x2 = (-1*b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
+	#def set_roots(self):
+
 
 
 	def testing(x, x2):
