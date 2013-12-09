@@ -10,47 +10,51 @@ import sys
 
 class Quadratic():
   
-  def __init__(self, argv):
-	a = None
-	b = None
-	c = None
-	self.coeffs = sys.argv          #This is where user input occurs
-	print self.coeffs
-	print len(self.coeffs)
-	for self.coeffs in argv:
+	def __init__(self, argv):
+		self.a = None
+		self.b = None
+		self.c = None
+		#user input
+		
+		self.coeffs = sys.argv
+		#for self.coeffs in argv:
   #def length(self):
-	  if len(self.coeffs) > 3:
-		print "Error: Your equation must be in standard form."
-	  elif len(self.coeffs) == 3:
-		a = self.coeffs[1]
-		b = self.coeffs[2]
-		c = self.coeffs[3]
-	  elif len(self.coeffs) == 1:
-		a = self.coeffs[1]
-		b = 0
-		c = 0
-	  
-		x = (-b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
+		if len(self.coeffs) > 4:
+			print "Error: Your equation must be in standard form."
+		elif len(self.coeffs) == 4:
+			self.a = self.coeffs[1]
+			self.b = self.coeffs[2]
+			self.c = self.coeffs[3]
+		elif len(self.coeffs) == 2:
+			self.a = self.coeffs[1]
+			self.b = 0
+			self.c = 0
+		a = self.a
+		b = self.b
+		c = self.c
+		print a, b, c
+	def set_roots(self):
+		self.x = (-1*b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
 
-		x2 = (-b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
+		self.x2 = (-1*b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
 
 
-  def testing(x, x2):
-	if x == x2 and x.imag == 0:
-	  print "Your solution is: x=", x.real                    #Double, real root
+	def testing(x, x2):
+		if x == x2 and x.imag == 0:
+			print "Your solution is: x=", x.real                    #Double, real root
 
-	elif x.imag == 0 and x2.imag == 0:                        #Distinct real roots
-	  print "Your solutions are: x=", x.real, "and x=", x2.real
+		elif x.imag == 0 and x2.imag == 0:                        #Distinct real roots
+			print "Your solutions are: x=", x.real, "and x=", x2.real
   
-	elif x == x2:
-	  print "Your solution is: x = ", x                       #Double, complex root
+		elif x == x2:
+			print "Your solution is: x = ", x                       #Double, complex root
     
-	else:
-	  print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
+		else:
+			print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
 
 solverObject = Quadratic(sys.argv[2:])
-
-solverObject.testing(x, x2)
+solverObject.set_roots()
+solverObject.testing(solverObject.x, solverObject.x2)
 
 print "Your equation must be in standard form"
 
