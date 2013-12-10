@@ -16,25 +16,24 @@ class Quadratic():
 		self.c = None
 		
 		#user input
-		
 		self.coeffs = sys.argv
-		#for self.coeffs in argv:
-  #def length(self):
+		
+		print len(self.coeffs)
 		if len(self.coeffs) > 4:
 			print "Error: Your equation must be in standard form."
 		elif len(self.coeffs) == 4:
-			self.a = self.coeffs[2]
-			self.b = self.coeffs[3]
-			self.c = self.coeffs[4]
+			self.a = self.coeffs[1]
+			self.b = self.coeffs[2]
+			self.c = self.coeffs[3]
 		elif len(self.coeffs) == 2:
 			self.a = self.coeffs[1]
 			self.b = 0
 			self.c = 0
+		#These assignments make creating the roots easier
 		a = self.a
 		b = self.b
 		c = self.c
 		print a, b, c
-		print self.coeffs[2], self.coeffs[3], self.coeffs[4]
 		self.x = (-1*b + cmath.sqrt((b**2)-4*a*c))/(2*a)          #First root
 
 		self.x2 = (-1*b - cmath.sqrt((b**2)-4*a*c))/(2*a)         #Second Root
@@ -96,11 +95,7 @@ else
 #WARNING *Unused code*
 
 #x = cmath.sqrt(a)              #Funny lines
-  
-#testing(x, x2)
-  
-#else:
-	#testing(x, x2)
+ 
 """
 
   if x == x2 and x.imag == 0:
@@ -123,8 +118,3 @@ else
 
 
 
-
-#if __name__ == "__main__":
-   #main(sys.argv[1:])
-
-#Says b isn't defined
