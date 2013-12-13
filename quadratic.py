@@ -11,19 +11,24 @@ import sys
 class Quadratic():
   
 	def __init__(self, argv):
-		self.a = None
-		self.b = None
-		self.c = None
+		self.a = int()
+		self.b = int()
+		self.c = int()
 		
 		#user input
 		self.coeffs = sys.argv
 		
 		print len(self.coeffs)
+		
+	def more_than_three_coefficients(self.coeffs):
+		
 		#Try block allows input of the form: 0, b ,0, which gives a ZeroDivisionError
 		try:
 			if len(self.coeffs) > 4:
 				print "Error: Your equation must be of degree 2 or lower and in standard form."
 				sys.exit(0)
+				
+		def one_coefficient(self.coeffs):
 			elif self.coeffs == 4:
 				self.a = int(self.coeffs[1])
 				a = self.a
@@ -57,7 +62,7 @@ class Quadratic():
 		print a, b, c
 		
 	#Tests to see what type of solutions there are.
-	def testing(self ,x, x2):
+	def testing(self, x, x2):
 		if x == x2 and x.imag == 0:
 			print "Your solution is: x =", x.real                    #Double, real root
 
