@@ -17,37 +17,40 @@ class Quadratic():
 		self.coeffs = sys.argv
 		print len(self.coeffs)
 	#Try block allows input of the form: 0, b ,c, which gives a ZeroDivisionError	
-	try:	
 	
-		def more_than_three_coefficients(self):
-			if len(self.coeffs) > 4:
-				print "Usage: You must give three coefficents, even if those coefficients are zero, your equation must be of degree 2 or lower, and in standard form."
-				sys.exit(0)
-		def less_than_three_coefficient(self):
-			if self.coeffs < 4:
-				print "Usage: You must give three coefficients, even if those coefficents are zero"
-				sys.exit(0)
-		def three_coefficients(self):
-			if len(self.coeffs) == 4:
-				self.a = int(self.coeffs[1])
-				self.b = int(self.coeffs[2])
-				self.c = int(self.coeffs[3])
+	def more_than_three_coefficients(self):
+		if len(self.coeffs) > 4:
+			print "Usage: You must give three coefficents, even if those coefficients are zero, your equation must be of degree 2 or lower, and in standard form."
+			sys.exit(0)
+	def less_than_three_coefficient(self):
+		if self.coeffs < 4:
+			print "Usage: You must give three coefficients, even if those coefficents are zero."
+			sys.exit(0)
+	try:
+	  def three_coefficients(self):
+		  if len(self.coeffs) == 4:
+			  self.a = int(self.coeffs[1])
+			  self.b = int(self.coeffs[2])
+			  self.c = int(self.coeffs[3])
 				
-				#These assignments make creating the roots easier.
-				a = self.a
-				b = self.b
-				c = self.c
+			  #These assignments make creating the roots easier.
+			  a = self.a
+			  b = self.b
+			  c = self.c
+			  if 0 == a:
+				self.x = 0
+				self.x2 = 0			
 				print a, b, c
-							
-				#Root creation
-				self.x = (-1*b + cmath.sqrt((b**2)-4*a*c))/(2*a)        #First root
+
+			  #Root creation
+			  self.x = (-1*b + cmath.sqrt((b**2)-4*a*c))/(2*a)        #First root
 			
-				self.x2 = (-1*b - cmath.sqrt((b**2)-4*a*c))/(2*a)       #Second Root
+			  self.x2 = (-1*b - cmath.sqrt((b**2)-4*a*c))/(2*a)       #Second Root
 	
 	except ZeroDivisionError:
-		self.x = 0
-		self.x2 = 0			
-		print a, b, c
+		  self.x = 0
+		  self.x2 = 0			
+		  print a, b, c
 		
 	#Tests to see what type of solutions there are.
 	def testing(self, x, x2):
