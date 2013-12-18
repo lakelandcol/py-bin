@@ -15,12 +15,12 @@ class Quadratic():
 		
 		#user input
 		self.coeffs = sys.argv
-		print len(self.coeffs)
+		print len(self.coeffs)     #Debugging purposes
 			
 	def more_than_three_coefficients(self):
 		if len(self.coeffs) > 4:
 			print "Usage: You must give three coefficents, even if those coefficients are zero, your equation must be of degree 2 or lower, and in standard form."
-			sys.exit(0)               #Purpose of argument in sys?
+			sys.exit(0)               #Purpose of argument in sys.exit?
 	def less_than_three_coefficients(self):
 		if len(self.coeffs) < 4:
 			print "Usage: You must give three coefficients, even if those coefficents are zero."
@@ -31,7 +31,7 @@ class Quadratic():
 			self.b = int(self.coeffs[2])
 			self.c = int(self.coeffs[3])
 			
-			#Tests for specific triplets of coeffcients, which normally gives a ZeroDivisonError or some other sort of error.
+			#Tests for specific triplets of coeffcients, which normally give a ZeroDivisonError or some other sort of error.
 	def coefficient_type_testing(self):
 		if self.a == 0 and self.b != 0:
 			print "condition true"		#Debugging purposes
@@ -68,15 +68,15 @@ class Quadratic():
 		
 		elif x == x2:
 			print "Your solution is: x = ", x						#Double, complex root
-	
+			print "Note that j = i = (-1)^1/2"
+
 		else:
 			print "Your solutions are: x =", x, "and x =", x2       #Distinct, complex root
-			
+			print "Note that j = i = (-1)^1/2"
+
 solverObject = Quadratic(sys.argv[1:])    #What is this argument for again? Is it needed?
 solverObject.more_than_three_coefficients()
 solverObject.less_than_three_coefficients()
 solverObject.three_coefficients()
-solverObject.coefficient_testing()				#Must I call every method within the class?
+solverObject.coefficient_type_testing()				#Must I call every method within the class?
 solverObject.root_type_testing(solverObject.x, solverObject.x2)
-
-print "Note that j = i = (-1)^1/2"
