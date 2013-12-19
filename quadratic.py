@@ -20,11 +20,11 @@ class Quadratic():
 	def more_than_three_coefficients(self):
 		if len(self.coeffs) > 4:
 			print "Usage: You must give three coefficents, even if those coefficients are zero, your equation must be of degree 2 or lower, and in standard form."
-			sys.exit(0)               #Purpose of argument in sys.exit?
+			sys.exit()               #Purpose of argument in sys.exit?
 	def less_than_three_coefficients(self):
 		if len(self.coeffs) < 4:
 			print "Usage: You must give three coefficients, even if those coefficents are zero."
-			sys.exit(0)
+			sys.exit()
 	def three_coefficients(self):
 		if len(self.coeffs) == 4:
 			self.a = int(self.coeffs[1])
