@@ -2,7 +2,7 @@ class Test:
 	def __init__(self):      #self = object name
 		self.x = 4
 		self.y = 5
-	def set_value(self, arg, c):      #arg = an argument = what the function expects for input; self is put in automatically
+	def set_value(self, arg, c):      #arg = an argument = what the function expects for input when you call the function; self is put in automatically
 		self.x = arg
 		self.z = 1
 		print c
