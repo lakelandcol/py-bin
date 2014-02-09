@@ -4,15 +4,22 @@
 
 from __future__ import division 		#division module makes it so the division operator doesn't round the quotient
 import cmath                    		#cmath module allows for complex solutions
-import sys                      
 
-class Solver():
-	
-	def __init__(self, argv):
+class Solver:
+
+	def __init__(self):
+		print "Your equation must be set equal to zero"
 		#user input
-		equation = sys.argv[1]
-		print equation
-		#print len(self.coeffs)   Debugging purposes
+		equation = raw_input("Input your equation: ")
+		print equation     #Debugging purposes
+		guess = raw_input("Guess the solution:\n")
+		print guess
+	#def derivative(self, equation):
+
+
+	#def Newtons_method(self, equation, guess):
+
+solverObject = Solver()
 """
 print "Input your equation"
 
@@ -26,7 +33,7 @@ print "Now take a guess, your guess must be close to what the solution actually 
 
 **They guess**
 
-Process ( guess - (equation)/(derivative) ) recursively a high number of times, for a high degree of accuracy    **Newton's Method**
+Process ( guess - (equation)/(derivative) ) in a loop a high number of times, for a high degree of accuracy    **Newton's Method**
 
 Store solution
 
