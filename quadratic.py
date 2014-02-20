@@ -9,7 +9,7 @@ import cmath                         #cmath module allows for complex solutions
 import sys
 
 class Quadratic():
-  
+
 	def __init__(self, argv):
 		self.a = int()
 		self.b = int()
