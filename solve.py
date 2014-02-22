@@ -9,17 +9,28 @@ import sys
 class Solver:
 
 	def __init__(self, argv):
-		x = int()
+		x = 0
 		n = int()   #The power
+		z = 0       #Used for number of iterations in for
+		coeffs = []
+		powers = []
 		print "Your equation must be set equal to zero"
 		print "Input the coefficients and the corresponding powers of the terms, even if those coefficients or terms are zero"
+		print len(sys.argv)
+
 		#User input here
-		for arg in sys.argv:
-			coeffs = sys.argv[1+2*x]  #coefficients are odd arguments
-			powers = sys.argv[2+2*x]  #powers are even arguments
+		while z < len(sys.argv):
+			#Try allows z to be too high without giving an IndexError (i.e. len(sys.argv = 3, and z = 2, x = 2, and coeffs.append(sys.argv[5)
+			try:
+				coeffs.append(sys.argv[1+2*x])  #coefficients are odd arguments
+				powers.append(sys.argv[2+2*x])  #powers are even arguments
+				x = x+1
+				z = z+1
+			except(IndexError): #When z becomes too high; there are no arguments left, so break the loop
+				break
 		#This is weird
-		print coeffs
-		print powers
+		print "coeffs =", coeffs
+		print "powers =", powers
 		#print sys.argv[-1]      #HOW DOES THIS WORK
 		#print equation     #Debugging purposes
 		#guess = raw_input("Guess the solution:\n")
@@ -33,12 +44,6 @@ solverObject = Solver(sys.argv[1:])
 
 #FIX: HOW TO ALLOW FOR AN INFINITE NUMBER OF COEFFICIENTS AND POWERS, AND ASSIGN THEM UNIQUELY TO A COMMAND ARGUMENT?? MAYBE FOR LOOP??
 """
-print "Input coefficients and corresponding powers"
-
-
-**They input it them, odd command line arguments being coefficients, even command line arguments being powers"   
-
-store eqation
 
 Define the derivative of the equation
 
@@ -57,4 +62,3 @@ Repeat this process until all solutions are found    If the highest degree is an
 print "Your solutions are:", solution1, solution2, solution3....solution-N  **Possibly in a column**
 
 """
-
