@@ -9,9 +9,10 @@ import sys
 class Solver:
 
 	def __init__(self, argv):
-		x = 0
+		y = 0
 		n = int()   #The power
 		z = 0       #Used for number of iterations in for
+		a = 1
 		coeffs = []
 		powers = []
 		print "Your equation must be set equal to zero"
@@ -20,29 +21,31 @@ class Solver:
 
 		#User input here
 		while z < len(sys.argv):
-			#Try allows z to be too high without giving an IndexError (i.e. len(sys.argv = 3, and z = 2, x = 2, and coeffs.append(sys.argv[5)
+			#Try allows z to be too high without giving an IndexError (i.e. len(sys.argv) = 3, and z = 2, x = 2, and coeffs.append(sys.argv[5))
 			try:
-				coeffs.append(sys.argv[1+2*x])  #coefficients are odd arguments
-				powers.append(sys.argv[2+2*x])  #powers are even arguments
-				x = x+1
+				coeffs.append(sys.argv[1+2*y])  #coefficients are odd arguments
+				powers.append(sys.argv[2+2*y])  #powers are even arguments
+				y = y+1
 				z = z+1
 			except(IndexError): #When z becomes too high; there are no arguments left, so break the loop
 				break
-		#This is weird
-		print "coeffs =", coeffs
-		print "powers =", powers
+		print "coeffs =", coeffs	#Debugging
+		print "powers =", powers	#Debugging
 		#print sys.argv[-1]      #HOW DOES THIS WORK
 		#print equation     #Debugging purposes
 		#guess = raw_input("Guess the solution:\n")
 		#print guess
+	def power_rule(self, coeffs, powers):
+		for coeff in self.coeffs:
+			print self.coeffs[self.a]*x**self.powers[self.a+1]
+			a = self.a + 1
 	#def derivative(self, equation):
 
 
 	#def Newtons_method(self, equation, guess):
 
 solverObject = Solver(sys.argv[1:])
-
-#FIX: HOW TO ALLOW FOR AN INFINITE NUMBER OF COEFFICIENTS AND POWERS, AND ASSIGN THEM UNIQUELY TO A COMMAND ARGUMENT?? MAYBE FOR LOOP??
+solverObject.power_rule(solverObject.coeffs[:], solverObject.powers[:])  #FIX says coeffs attribute doesn't exist
 """
 
 Define the derivative of the equation
