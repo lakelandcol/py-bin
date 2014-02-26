@@ -13,7 +13,9 @@ class Solver:
 		n = int()   #The power
 		z = 0       #Used for number of iterations in for
 		a = 1
+		global coeffs
 		coeffs = []
+		global powers
 		powers = []
 		print "Your equation must be set equal to zero"
 		print "Input the coefficients and the corresponding powers of the terms, even if those coefficients or terms are zero"
@@ -36,16 +38,16 @@ class Solver:
 		#guess = raw_input("Guess the solution:\n")
 		#print guess
 	def power_rule(self, coeffs, powers):
-		for coeff in self.coeffs:
-			print self.coeffs[self.a]*x**self.powers[self.a+1]
-			a = self.a + 1
+		for coeff in coeffs:
+			print coeffs[a]*x**powers[a+1]
+			a = a + 1
 	#def derivative(self, equation):
 
 
 	#def Newtons_method(self, equation, guess):
 
 solverObject = Solver(sys.argv[1:])
-solverObject.power_rule(solverObject.coeffs[:], solverObject.powers[:])  #FIX says coeffs attribute doesn't exist
+solverObject.power_rule(coeffs[:], powers[:])  #FIX says coeffs attribute doesn't exist
 """
 
 Define the derivative of the equation
