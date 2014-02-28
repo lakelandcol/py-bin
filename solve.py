@@ -9,45 +9,31 @@ import sys
 class Solver:
 
 	def __init__(self, argv):
-		y = 0
-		n = int()   #The power
-		z = 0       #Used for number of iterations in for
-		a = 1
-		global coeffs
-		coeffs = []
-		global powers
-		powers = []
-		print "Your equation must be set equal to zero"
-		print "Input the coefficients and the corresponding powers of the terms, even if those coefficients or terms are zero"
-		print len(sys.argv)
+		print argv
+		# User enters four arguments
+		argtotal = len(argv)-1 # should be 4
+		argcounter = argtotal / 2
+		i = 1
 
-		#User input here
-		while z < len(sys.argv):
-			#Try allows z to be too high without giving an IndexError (i.e. len(sys.argv) = 3, and z = 2, x = 2, and coeffs.append(sys.argv[5))
-			try:
-				coeffs.append(sys.argv[1+2*y])  #coefficients are odd arguments
-				powers.append(sys.argv[2+2*y])  #powers are even arguments
-				y = y+1
-				z = z+1
-			except(IndexError): #When z becomes too high; there are no arguments left, so break the loop
-				break
-		print "coeffs =", coeffs	#Debugging
-		print "powers =", powers	#Debugging
-		#print sys.argv[-1]      #HOW DOES THIS WORK
-		#print equation     #Debugging purposes
-		#guess = raw_input("Guess the solution:\n")
+		while argcounter != 0:
+			dict[argv[i]] = dict[argv[i+1]]
+			argcounter - 1
+			i + 2
+		#dict = {}
+		#for arg in argv:
+			#print arg
+			#dict[arg[i]] = dict[arg[i+1]]
+			#i+2
+		#print dict
 		#print guess
-	def power_rule(self, coeffs, powers):
-		for coeff in coeffs:
-			print coeffs[a]*x**powers[a+1]
-			a = a + 1
+	#def power_rule(self, coeffs, powers):
 	#def derivative(self, equation):
 
 
 	#def Newtons_method(self, equation, guess):
 
 solverObject = Solver(sys.argv[1:])
-solverObject.power_rule(coeffs[:], powers[:])  #FIX says coeffs attribute doesn't exist
+
 """
 
 Define the derivative of the equation
@@ -67,3 +53,5 @@ Repeat this process until all solutions are found    If the highest degree is an
 print "Your solutions are:", solution1, solution2, solution3....solution-N  **Possibly in a column**
 
 """
+
+
