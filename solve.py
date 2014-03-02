@@ -11,14 +11,16 @@ class Solver:
 	def __init__(self, argv):
 		print argv
 		# User enters four arguments
-		argtotal = len(argv)-1 # should be 4
+		argtotal = len(sys.argv)-1 # should be 4
 		argcounter = argtotal / 2
 		i = 1
+		dict = {}
 
 		while argcounter != 0:
-			dict[argv[i]] = dict[argv[i+1]]
+			dict[sys.argv[i]] = dict[sys.argv[i+1]]
 			argcounter - 1
 			i + 2
+		print dict
 		#dict = {}
 		#for arg in argv:
 			#print arg
