@@ -20,7 +20,7 @@ class Solver:
 			dict[sys.argv[i]] = dict[sys.argv[i+1]]
 			argcounter - 1
 			i + 2
-		print dict
+		print dict.get('2')
 		#dict = {}
 		#for arg in argv:
 			#print arg
