@@ -17,7 +17,7 @@ class Quadratic():
 		
 		#user input
 		self.coeffs = sys.argv
-		#print len(self.coeffs)     Debugging purposes			
+		#print len(self.coeffs)     Debugging			
 	def more_than_three_coefficients(self):
 		if len(self.coeffs) > 4:
 			print "Usage: You must give three coefficents, even if those coefficients are zero, your equation must be of degree 2 or lower and in standard form."
@@ -35,7 +35,7 @@ class Quadratic():
 	#Tests for specific triplets of coeffcients, which normally give a ZeroDivisonError or some other sort of error.
 	def coefficient_type_testing(self):
 		if self.a == 0 and self.b != 0:
-			#print "condition true"		Debugging purposes
+			#print "condition true"		Debugging
 			self.x = -self.c/self.b
 			self.x2 = -self.c/self.b		
 		
@@ -46,7 +46,7 @@ class Quadratic():
 			print self.c, "will never equal 0"
 			sys.exit(0)
 		else:
-			#print "condition false"		Debugging purposes    
+			#print "condition false"		Debugging    
 
 			#Root creation
 			self.x = (-self.b + cmath.sqrt((self.b**2)-4*self.a*self.c))/(2*self.a)		#First root
@@ -55,7 +55,7 @@ class Quadratic():
 		
 	#Tests to see what type of roots there are and prints them accordingly.
 	def root_type_testing(self, x, x2):
-		if x == x2 and x.imag == 0 and x == -0.0:					#Double, real root
+		if x == x2 and x.imag == 0 and x == -0.0:	#Double, real root
 			x = 0.0
 			print "Your solution is: x =", x
 		
@@ -66,7 +66,7 @@ class Quadratic():
 			print "Your solutions are: x =", x.real, "and x =", x2.real
 		
 		elif x == x2:
-			print "Your solution is: x = ", x						#Double, complex root
+			print "Your solution is: x = ", x	#Double, complex root
 			print "Note that j = i = (-1)^1/2"
 
 		else:
